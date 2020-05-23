@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
+const port = 5000;
+
 app.get("/", (req, res) => {
- // TODO
- res.send("Hello, world!");
-});
-app.listen(3001, () => {
- console.log("Listening on port 3001!");
+ res.send("Hello World!");
+})
+app.listen(port, () => {
+ console.log(`Listening on port ${port}!`)
 });
