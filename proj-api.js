@@ -30,4 +30,4 @@ app.get("/projects", (req, res) => {
  });
 
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
+app.listen(port || process.env.PORT, () => console.log(`Hello world app listening on port ${port}!`));
