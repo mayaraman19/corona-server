@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-app.post('/projects', (req, res) => {
+app.post('/', (req, res) => {
     const proj = req.body;
     console.log(proj);
     projects.push(proj);
@@ -25,7 +25,7 @@ app.post('/projects', (req, res) => {
 
 });
 
-app.get("/projects", (req, res) => {
+app.get("/", (req, res) => {
     res.json(projects);
  });
 
