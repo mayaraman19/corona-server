@@ -25,6 +25,17 @@ app.post('/', (req, res) => {
 
 });
 
+//DELETE THIS PART IF HEROKU DOESN"T WORK
+app.delete('/', (req, res) => {
+    projects = projects.filter((value) => {
+        if(req.body.postTitle == value.postTitle
+            && req.body.postDescription == value.postDescription
+            && req.body.tag == value.tag)
+            return false;
+        else return true;
+    });
+});
+
 app.get("/", (req, res) => {
     res.json(projects);
  });
