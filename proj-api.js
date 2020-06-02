@@ -8,6 +8,12 @@ const port = 5000;
 //keep post data
 let projects = []
 
+test = {
+    postTitle: "HELLLOO THERE",
+    postDescription: "IS THEREW ANYBODY OUT THERE",
+    tag: "masks"
+}
+
 app.use(cors());
 
 //I assume it's turning data into JSON format

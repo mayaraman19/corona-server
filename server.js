@@ -3,7 +3,6 @@ const app = express();
 const port = 5000;
 
 let projects = [];
-
 app.get("/projects", (req, res) => {
     res.json(projects);
 })
