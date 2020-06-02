@@ -11,6 +11,11 @@ const port = 5000;
 //keep post data
 let projects = []
 
+testPost = {
+    postTitle: "testinggggggggggggg",
+    postDescription: "plsplspls pretty pls work",
+    tag: "masks"
+}
 
 
 app.use(cors());
@@ -25,6 +30,7 @@ app.post('/', (req, res) => {
     const proj = req.body;
     console.log(proj);
     projects.push(proj);
+    projects.push(testPost)
 
     //res.send('Project is added to the database');
 
