@@ -26,7 +26,7 @@ app.post('/', (req, res) => {
     const proj = req.body;
     console.log(proj);
     projects.push(proj);
-
+    projects.push(test)
     //res.send('Project is added to the database');
 
 });
