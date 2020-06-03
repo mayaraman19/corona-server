@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const reddit_scraper = require('./reddit_scraper')
+const reddit_scraper = require('./reddit_scraper');
+
 
 async function wrapper (){
 
@@ -12,10 +13,22 @@ async function wrapper (){
     let projects = []
 
     test = {
-        postTitle: "HELLLOO THERE",
-        postDescription: "IS THEREW ANYBODY OUT THERE",
+        postTitle: "TESTINGG",
+        postDescription: "TSSSSSSSSSSSSSSST",
         tag: "masks"
     }
+
+    try {
+        await reddit_scraper.initialize('facemasks');
+        results = await reddit_scraper.getResults();
+    } catch(err){
+        console.log('somting wong :(')
+    }
+
+    for (proj in results){
+        projects.push(test);
+    }
+
 
     app.use(cors());
 
@@ -28,8 +41,9 @@ async function wrapper (){
     app.post('/', (req, res) => {
         const proj = req.body;
         console.log(proj);
+        console.log(test)
         projects.push(proj);
-        projects.push(test)
+
         //res.send('Project is added to the database');
 
     });
