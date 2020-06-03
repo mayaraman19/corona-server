@@ -51,6 +51,8 @@ async function wrapper() {
 
     });
 
+    //random comment
+
     //DELETE THIS PART IF HEROKU DOESN"T WORK
     app.delete('/', (req, res) => {
         projects = projects.filter((value) => {
