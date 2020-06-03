@@ -8,7 +8,7 @@ const self = {
 
     initialize: async (reddit) => {
 
-        self.browser = await puppeteer.launch({headless: false});
+        self.browser = await puppeteer.launch({headless: true});
         self.page = await self.browser.newPage();
 
         //GO to the subreddit with pupeteer
