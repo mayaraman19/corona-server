@@ -32,7 +32,7 @@ async function wrapper() {
         projects.push(test)
 
     }
-
+ 
     app.use(cors());
 
     //I assume it's turning data into JSON format
