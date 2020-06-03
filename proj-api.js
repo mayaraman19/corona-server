@@ -69,7 +69,7 @@ async function wrapper() {
     });
 
 
-    app.listen(process.env.PORT || port);
+    app.listen(/*process.env.PORT || */port);
 
     console.log(`Hello world app listening on port ${port}!`);
 
