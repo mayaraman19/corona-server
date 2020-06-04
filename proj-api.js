@@ -26,7 +26,7 @@ async function wrapper() {
         var posts = await reddit_scraper.getResults("masks", "facemasks");
         results.push.apply(results, posts)
     } catch (err){
-        console.log("uh oh promise failed reddit scraper brokin :(")
+        console.log("uh oh facemasks promise failed reddit scraper brokin :(")
     }
 
     try{
@@ -34,7 +34,7 @@ async function wrapper() {
         var posts = await reddit_scraper.getResults("baking", "Sourdough");
         results.push.apply(results, posts)
     } catch (err){
-        console.log("uh oh promise failed reddit scraper brokin :(")
+        console.log("uh oh sourdough promise failed reddit scraper brokin :(")
     }
     
     try{
@@ -42,7 +42,7 @@ async function wrapper() {
         var posts = await reddit_scraper.getResults("baking", "Breadit");
         results.push.apply(results, posts)
     } catch (err){
-        console.log("uh oh promise failed reddit scraper brokin :(")
+        console.log("uh oh Breadit promise failed reddit scraper brokin :(")
     }
 
     try{
@@ -50,7 +50,7 @@ async function wrapper() {
         var posts = await reddit_scraper.getResults("gardening", "gardening");
         results.push.apply(results, posts)
     } catch (err){
-        console.log("uh oh promise failed reddit scraper brokin :(")
+        console.log("uh oh gardening promise failed reddit scraper brokin :(")
     }
 
     //go through scraped posts and make them into
