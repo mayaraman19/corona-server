@@ -16,7 +16,7 @@ const self = {
 
     },
 
-    getResults: async () => {
+    getResults: async (tag, sub) => {
 
         let elements = await self.page.$$('#siteTable > div[class*="thing"]');
         let results = [];
@@ -25,13 +25,16 @@ const self = {
         for (let element of elements){
 
             let title = await element.$eval(('p[class="title"]'), node => node.innerText.trim());
+            let postURL = await element.$eval(('a[class*="title"]'), node => node.getAttribute('href'));
             let rank = await element.$eval(('span[class="rank"]'), node => node.innerText.trim());
             let postTime = await element.$eval(('p[class="tagline "] > time'), node => node.getAttribute('title'));
             let authorURL = await element.$eval(('p[class="tagline "] > a[class*="author"]'), node => node.getAttribute('href'));
             let author = await element.$eval(('p[class="tagline "] > a[class*="author"]'), node => node.innerText.trim());
             let score = await element.$eval(('div[class="score likes"]'), node => node.innerText.trim());
 
-            post = [title, authorURL]
+            postURL = "https://old.reddit.com" + postURL
+
+            post = [title, postURL, tag, author, sub]
             //console.log(post)
             results.push(post)
 
