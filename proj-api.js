@@ -28,7 +28,7 @@ async function wrapper() {
         console.log("uh oh promise failed reddit scraper brokin :(")
     }
 
-    for (let index = 0; index < results.length; index++) {
+    for (let index = 2; index < results.length; index++) {
         let title = results[index][0];
         let description = results[index][1];
         console.log("post: ", title, description)
@@ -51,7 +51,6 @@ async function wrapper() {
     app.post('/', (req, res) => {
         const proj = req.body;
         console.log(proj);
-        console.log(test);
         projects.push(proj);
 
         //res.send('Project is added to the database');
