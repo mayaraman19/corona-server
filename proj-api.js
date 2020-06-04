@@ -35,7 +35,7 @@ async function wrapper() {
         post = {
             postTitle: title,
             postDescription: description,
-            tag: "masks"
+            link: description,
         }        
         projects.push(post)
     }
