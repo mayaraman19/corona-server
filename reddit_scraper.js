@@ -32,8 +32,10 @@ const self = {
             let author = await element.$eval(('p[class="tagline "] > a[class*="author"]'), node => node.innerText.trim());
             let score = await element.$eval(('div[class="score likes"]'), node => node.innerText.trim());
 
-            postURL = "https://old.reddit.com" + postURL
 
+            if (postURL.substring(0,2) == "/r")
+                postURL = "https://old.reddit.com" + postURL
+            
             post = [title, postURL, tag, author, sub]
             //console.log(post)
             results.push(post)
