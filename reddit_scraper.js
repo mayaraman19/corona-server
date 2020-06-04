@@ -31,6 +31,11 @@ const self = {
             let author = await element.$eval(('p[class="tagline "] > a[class*="author"]'), node => node.innerText.trim());
             let score = await element.$eval(('div[class="score likes"]'), node => node.innerText.trim());
 
+            post = [title, authorURL]
+            //console.log(post)
+            results.push(post)
+
+            /*
             results.push({
                 postTitle: title,
                 //rank,
@@ -40,10 +45,8 @@ const self = {
                 //author,
                 //score,
             }) 
-            
-            
-
-            /**
+            */            
+            /*
             results.push({
                 title,
                 rank,
